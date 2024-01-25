@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "544386222363",
+    "project_id": "qabk17-instagram-clone",
+    "storage_bucket": "qabk17-instagram-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544386222363:android:5ef16f28d81df3eadc6bbe",
+        "android_client_info": {
+          "package_name": "com.example.riverpod_practice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-4mzTT4m5IiEXfipGSuTujh743BOj3wU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
