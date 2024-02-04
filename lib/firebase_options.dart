@@ -60,7 +60,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '544386222363',
     projectId: 'qabk17-instagram-clone',
     storageBucket: 'qabk17-instagram-clone.appspot.com',
-    iosBundleId: 'com.example.riverpodPractice',
+    iosBundleId: 'com.quocanhbk17.riverpodPractice',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -69,6 +69,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '544386222363',
     projectId: 'qabk17-instagram-clone',
     storageBucket: 'qabk17-instagram-clone.appspot.com',
-    iosBundleId: 'com.example.riverpodPractice.RunnerTests',
+    iosBundleId: 'com.quocanhbk17.riverpodPractice.RunnerTests',
   );
 }
