@@ -57,9 +57,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MainView extends ConsumerWidget {
-  const MainView({
-    super.key,
-  });
+  const MainView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -96,6 +94,7 @@ class LoginView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final authStateNotifier = ref.read(authStateProvider.notifier);
+    final isLoading = ref.watch(authStateProvider).isLoading;
 
     return Scaffold(
       appBar: AppBar(
