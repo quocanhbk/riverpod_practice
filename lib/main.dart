@@ -6,6 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_practice/state/auth/providers/auth_state_provider.dart';
 import 'package:riverpod_practice/state/auth/providers/is_logged_in_provider.dart';
 import 'package:riverpod_practice/state/auth/providers/user_id_provider.dart';
+import 'package:riverpod_practice/state/providers/is_loading_provider.dart';
+import 'package:riverpod_practice/views/components/loading/loading_screen.dart';
 
 import 'firebase_options.dart';
 
@@ -48,6 +50,14 @@ class MyApp extends StatelessWidget {
       ),
       home: Consumer(
         builder: (context, ref, _) {
+          ref.listen(isLoadingProvider, (previous, next) {
+            if (next) {
+              LoadingScreen.instance().show(context: context);
+            } else {
+              LoadingScreen.instance().hide();
+            }
+          });
+
           final isLoggedIn = ref.watch(isLoggedInProvider);
           return isLoggedIn ? const MainView() : const LoginView();
         },
