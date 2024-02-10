@@ -8,6 +8,7 @@ import 'package:riverpod_practice/state/auth/providers/is_logged_in_provider.dar
 import 'package:riverpod_practice/state/auth/providers/user_id_provider.dart';
 import 'package:riverpod_practice/state/providers/is_loading_provider.dart';
 import 'package:riverpod_practice/views/components/loading/loading_screen.dart';
+import 'package:riverpod_practice/views/login/login_view.dart';
 
 import 'firebase_options.dart';
 
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       darkTheme: ThemeData.dark(useMaterial3: true),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
@@ -88,41 +89,6 @@ class MainView extends ConsumerWidget {
             ElevatedButton(
               onPressed: authStateNotifier.logOut,
               child: const Text('Log out'),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class LoginView extends ConsumerWidget {
-  const LoginView({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final authStateNotifier = ref.read(authStateProvider.notifier);
-    final isLoading = ref.watch(authStateProvider).isLoading;
-
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text("Login"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: authStateNotifier.loginWithGoogle,
-              child: const Text("Sign In with Google"),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: authStateNotifier.loginWithFacebook,
-              child: const Text("Sign In with Facebook"),
             )
           ],
         ),
